@@ -1,17 +1,25 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+import { HeaderContainer, List, Item, ItemLink } from './style';
 
-export const Header = () => (
-  <header>
-    <ul>
-      <li>
-        <a href='/'>Movies</a>
-      </li>
-      <li>
-        <a href='/tv'>TV</a>
-      </li>
-      <li>
-        <a href='/search'>Search</a>
-      </li>
-    </ul>
-  </header>
-);
+const Header = ({ location: { pathname } }) => {
+  
+
+  return (
+    <HeaderContainer>
+      <List>
+        <Item current={pathname === '/'}>
+          <ItemLink to='/movies'>Movies</ItemLink>
+        </Item>
+        <Item current={pathname === '/tv'}>
+          <ItemLink to='/tv'>TV</ItemLink>
+        </Item>
+        <Item current={pathname === '/search'}>
+          <ItemLink to='/search'>Search</ItemLink>
+        </Item>
+      </List>
+    </HeaderContainer>
+  );
+};
+
+export default withRouter(Header);
