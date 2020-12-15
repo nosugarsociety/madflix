@@ -16,3 +16,5 @@
 - [] Airing Today (TV)
 - [] TV Show detail
 - [] Movie Detail
+- [] Search (Movie, TV)
+

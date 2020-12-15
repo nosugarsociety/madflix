@@ -3,8 +3,6 @@ import { withRouter } from 'react-router-dom';
 import { HeaderContainer, List, Item, ItemLink } from './style';
 
 const Header = ({ location: { pathname } }) => {
-  
-
   return (
     <HeaderContainer>
       <List>
