@@ -1,15 +1,18 @@
 import React from 'react';
-import PropTypes, { any } from 'prop-types';
+import PropTypes from 'prop-types';
 import { Container, Title, Grid } from './style';
 
-export const Section = ({ title, children }) => {
+export const Section = ({ title, children }) => (
   <Container>
     <Title>{title}</Title>
     <Grid>{children}</Grid>
-  </Container>;
-};
+  </Container>
+);
 
 Section.propTypes = {
   title: PropTypes.string.isRequired,
-  children: any,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
 };
