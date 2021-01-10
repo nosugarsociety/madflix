@@ -1,7 +1,7 @@
 import React from 'react';
 import { tvApi } from '../../api';
 import { movieApi } from '../../api';
-import DetailPresenter from './DetailPresenter';
+import { DetailPresenter } from './DetailPresenter';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default class extends React.Component {
