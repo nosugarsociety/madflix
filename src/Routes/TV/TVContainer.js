@@ -32,7 +32,7 @@ export default class extends React.Component {
         airingToday,
       });
     } catch (err) {
-      console.log(`TV fetch was not successful with ${err}`);
+      this.setState({ error: `TV fetch was not successful with ${err}` });
     } finally {
       this.setState({ loading: false });
     }

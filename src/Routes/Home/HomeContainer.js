@@ -47,7 +47,7 @@ export default class extends React.Component {
 
   render() {
     const { nowPlaying, upComing, popular, error, loading } = this.state;
-    console.log(this.state);
+
     return (
       <HomePresenter
         nowPlaying={nowPlaying}

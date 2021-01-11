@@ -12,13 +12,24 @@ export default class extends React.Component {
     error: null,
   };
 
-  handleSubmit = () => {
+  handleSubmit = (e) => {
+    e.preventDefault();
     const { searchTerm } = this.state;
     this.searchByTerm(searchTerm);
   };
 
+  updateTerm = (e) => {
+    const {
+      target: { value },
+    } = e;
+    this.setState({
+      searchTerm: value,
+    });
+  };
+
   searchByTerm = async () => {
     const { searchTerm } = this.state;
+    this.setState({ loading: true });
 
     const {
       data: { results: movieResults },
@@ -31,7 +42,7 @@ export default class extends React.Component {
       this.setState({ loading: true });
       this.setState({ movieResults, tvResults });
     } catch (err) {
-      console.log(`Error on searching for ${searchTerm}`);
+      this.setState({ error: "Can't find results!" });
     } finally {
       this.setState({ loading: false });
     }
@@ -47,6 +58,7 @@ export default class extends React.Component {
         searchTerm={searchTerm}
         error={error}
         handleSubmit={this.handleSubmit}
+        updateTerm={this.updateTerm}
       />
     );
   }
