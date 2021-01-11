@@ -22,21 +22,48 @@ export const HomePresenter = ({
       {nowPlaying && nowPlaying.length > 0 && (
         <Section title='Now Playing'>
           {nowPlaying.map((item) => (
-            <Poster />
+            <Poster
+              key={item.id}
+              id={item.id}
+              ddd
+              imageUrl={item.poster_path}
+              title={item.original_title}
+              isMovie={true}
+              rating={item.vote_average}
+              year={item.release_date && item.release_date.substring(0, 4)}
+            />
           ))}
         </Section>
       )}
       {upComing && upComing.length > 0 && (
         <Section title='Upcoming Movies'>
           {upComing.map((item) => (
-            <Poster />
+            <Poster
+              key={item.id}
+              id={item.id}
+              ddd
+              imageUrl={item.poster_path}
+              title={item.original_title}
+              isMovie={true}
+              rating={item.vote_average}
+              year={item.release_date && item.release_date.substring(0, 4)}
+            />
           ))}
         </Section>
       )}
       {popular && popular.length > 0 && (
         <Section title='Popular Movies'>
           {popular.map((item) => (
-            <Poster />
+            <Poster
+              key={item.id}
+              id={item.id}
+              ddd
+              imageUrl={item.poster_path}
+              title={item.original_title}
+              isMovie={true}
+              rating={item.vote_average}
+              year={item.release_date && item.release_date.substring(0, 4)}
+            />
           ))}
         </Section>
       )}

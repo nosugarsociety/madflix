@@ -15,10 +15,16 @@ export const Poster = ({
     <Link to={isMovie ? `/movie/${id}` : `/show/${id}`}>
       <Container>
         <ImageContainer>
-          <Image bgUrl={imageUrl} />
+          <Image
+            bgUrl={
+              imageUrl
+                ? `https:/image.tmdb.org/t/p/w300${imageUrl}`
+                : require('../../assets/noimage.png')
+            }
+          />
           <Rating>
             <span role='img' aria-label='rating'>
-              ★
+              ⭐
             </span>
             {rating}/10
           </Rating>
