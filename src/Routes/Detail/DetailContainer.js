@@ -25,8 +25,10 @@ export default class extends React.Component {
       },
       history: { push },
     } = this.props;
+    console.log('id:', id);
     const { isMovie } = this.state;
     const parsedId = parseInt(id);
+
     if (isNaN(parsedId)) {
       return push('/');
     }
@@ -35,9 +37,11 @@ export default class extends React.Component {
 
     try {
       if (isMovie) {
-        const request = await movieApi.movieDetail();
+        console.log('here??');
+        const request = await movieApi.movieDetail(parsedId);
         result = request.data;
       } else {
+        console.log('else');
         const request = await tvApi.showDetail(parsedId);
         result = request.data;
       }

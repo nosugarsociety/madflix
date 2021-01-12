@@ -30,7 +30,7 @@ export const TVPresenter = ({
               ddd
               imageUrl={item.poster_path}
               title={item.original_name}
-              isMovie={true}
+              isMovie={false}
               rating={item.vote_average}
               year={item.first_air_date && item.first_air_date.substring(0, 4)}
             />
@@ -46,7 +46,7 @@ export const TVPresenter = ({
               ddd
               imageUrl={item.poster_path}
               title={item.original_name}
-              isMovie={true}
+              isMovie={false}
               rating={item.vote_average}
               year={item.first_air_date && item.first_air_date.substring(0, 4)}
             />
@@ -62,7 +62,7 @@ export const TVPresenter = ({
               ddd
               imageUrl={item.poster_path}
               title={item.original_name}
-              isMovie={true}
+              isMovie={false}
               rating={item.vote_average}
               year={item.first_air_date && item.first_air_date.substring(0, 4)}
             />
