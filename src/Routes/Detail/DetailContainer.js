@@ -10,6 +10,7 @@ export default class extends React.Component {
     const {
       location: { pathname },
     } = props;
+
     this.state = {
       result: null,
       error: null,
@@ -19,13 +20,13 @@ export default class extends React.Component {
   }
 
   async componentDidMount() {
+    console.log('tp', this.props);
     const {
       match: {
         params: { id },
       },
       history: { push },
     } = this.props;
-    console.log('id:', id);
     const { isMovie } = this.state;
     const parsedId = parseInt(id);
 
@@ -37,11 +38,9 @@ export default class extends React.Component {
 
     try {
       if (isMovie) {
-        console.log('here??');
         const request = await movieApi.movieDetail(parsedId);
         result = request.data;
       } else {
-        console.log('else');
         const request = await tvApi.showDetail(parsedId);
         result = request.data;
       }
